@@ -79,6 +79,14 @@ h3{font-family:var(--display);font-size:1.12rem;font-weight:600}
 .scope{margin-top:.4rem;background:var(--card);border:1px solid var(--line);border-radius:5px;padding:1.3rem 1.5rem}
 .scope .tag{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--teal-ink)}
 .scope p{margin-top:.6rem;font-family:var(--mono);font-size:.78rem;line-height:1.9;color:var(--muted)}
+.case{background:var(--card);border:1px solid color-mix(in srgb,var(--teal) 30%,transparent);border-radius:5px;padding:1.6rem 1.8rem;box-shadow:var(--shadow);margin-bottom:1.3rem}
+.case .role{font-family:var(--mono);font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink)}
+.case h3{font-size:1.25rem;margin:.35rem 0 .9rem}
+.case dl{display:grid;grid-template-columns:9.5rem 1fr;gap:.55rem 1.2rem}
+.case dt{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:.15rem}
+.case dd{font-size:.98rem;color:var(--muted);line-height:1.55}
+.case dd b{color:var(--ink)}
+@media (max-width:640px){.case dl{grid-template-columns:1fr;gap:.15rem}.case dt{margin-top:.6rem}}
 footer{border-top:1px solid var(--line);padding:1.6rem 0 2.4rem;margin-top:1rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between;font-family:var(--mono);font-size:.68rem;color:var(--muted)}
 </style>
@@ -117,44 +125,40 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between
     <p>My applied research and engineering work spans computer vision, Edge AI, multimodal and generative AI, industrial IoT, and intelligent information systems. As a technical contributor I have worked across the full AI system lifecycle — from custom dataset collection and curation, model development and training, and optimization for resource-constrained hardware, through edge deployment, resilient device-to-server communication, backend integration, dashboards, and operational system design.</p>
     <p>A significant part of this work has involved large-scale, continuously operating AI systems, where computational efficiency, reliability, connectivity constraints, data synchronization, and maintainability matter as much as model accuracy.</p>
   </div>
-  <p class="note">Role framing: unless noted otherwise, entries below reflect my role as a technical contributor within collaborative industry and research teams. Client identities, deployment specifics, and proprietary details are intentionally omitted.</p>
+  <p class="note"><strong>Role framing.</strong> Unless noted otherwise, entries below reflect my role as a technical contributor within collaborative industry and research teams.<br><br><strong>Responsible AI &amp; confidentiality.</strong> Projects presented here are described only at a high technical level. Client-sensitive architecture, datasets, operational details, and security information are intentionally omitted. For systems involving biometric, demographic, or health-related information, responsible deployment, access control, privacy, and appropriate human oversight are treated as system-level requirements.</p>
 </header>
 
 <section id="edge">
   <div class="wrap">
     <div class="sec-head"><h2>1 · Large-scale Edge AI &amp; computer vision</h2></div>
-    <div class="cards">
-      <div class="card">
-        <p class="role">Technical contributor · 2023 – 2025</p>
-        <h3>Distributed Edge AI for Mass-Gathering Operations</h3>
-        <p>Distributed computer-vision systems deployed across the operational and accommodation areas of one of the world's largest annual mass gatherings, over three consecutive seasons. Contributions included custom dataset collection and preparation, model development and training, inference optimization, edge-model conversion, device deployment, local caching with server synchronization, and OS/firmware-level optimization for reliable continuous operation — engineering vision models beyond experimental accuracy into real-world conditions: variable lighting, dense scenes, limited compute, and intermittent connectivity.</p>
-        <p class="foot">YOLO · edge NPUs · offline caching · fleet deployment</p>
-      </div>
-      <div class="card">
-        <p class="role">Technical contributor</p>
-        <h3>On-Premise Edge AI Intelligence Platform</h3>
-        <p>An edge-first computer-vision and intelligent-monitoring platform for real-time, on-premise AI processing — integrating camera analytics with operational intelligence for people and activity monitoring, facility safety, business analytics, and intelligent surveillance, without requiring continuous cloud processing.</p>
-        <p class="foot">computer vision · IoT integration · multi-agentic AI · on-premise</p>
-      </div>
+    <div class="case">
+      <p class="role">Edge AI &amp; computer vision contributor · 2023 – 2025</p>
+      <h3>Distributed Edge AI for Mass-Gathering Operations</h3>
+      <dl>
+        <dt>Challenge</dt><dd>Reliable real-time computer vision across dense, highly variable outdoor and accommodation environments, using resource-constrained edge nodes on intermittently connected networks.</dd>
+        <dt>Contributions</dt><dd>Custom dataset development; model training and validation; hardware-aware optimization and model conversion; edge deployment; offline caching and server synchronization; OS/firmware optimization for continuous operation.</dd>
+        <dt>Approach</dt><dd>Detection and tracking models optimized and converted for edge NPUs; offline-first pipelines with local caching and resilient synchronization; fleet-level deployment and monitoring.</dd>
+        <dt>Scale</dt><dd>Three consecutive annual production deployments across a large distributed edge fleet.</dd>
+        <dt>Focus</dt><dd><b>Edge inference · computer vision · NPU optimization · offline-first systems · distributed deployment</b></dd>
+      </dl>
+    </div>
+    <div class="case">
+      <p class="role">Edge AI &amp; computer vision contributor</p>
+      <h3>On-Premise Edge AI Intelligence Platform</h3>
+      <dl>
+        <dt>Challenge</dt><dd>Real-time video intelligence for operational environments where data cannot leave the premises and continuous cloud processing is not an option.</dd>
+        <dt>Contributions</dt><dd>Computer-vision analytics development, edge processing pipelines, and integration of camera analytics with operational intelligence and IoT signals.</dd>
+        <dt>Approach</dt><dd>Edge-first architecture combining on-premise vision inference, business-intelligence integration, and multi-agentic AI components.</dd>
+        <dt>Focus</dt><dd><b>On-premise vision AI · IoT integration · real-time analytics</b></dd>
+      </dl>
     </div>
     <div class="modules">
-      <p class="tag">Computer-vision analytics modules · 2025 · technical contributor</p>
+      <p class="tag">Computer-vision analytics capabilities · consolidated</p>
       <ol>
-        <li><b>People counting &amp; occupancy</b> — real-time detection, tracking, and counting with temporal occupancy and peak-load analytics.</li>
-        <li><b>Face &amp; uniform recognition</b> — vision-based staff identification with uniform/compliance recognition.</li>
-        <li><b>Staff interaction analytics</b> — presence detection and analysis of staff–customer–service-area interactions.</li>
-        <li><b>Sentiment analysis</b> — visual inference of engagement and observable sentiment patterns for service-quality analytics.</li>
-        <li><b>Demographic &amp; group analytics</b> — aggregate classification and individual/family/group visitation patterns.</li>
-        <li><b>Peak-time detection</b> — temporal visitor analysis for staffing and operational planning.</li>
-        <li><b>Object-interaction analytics</b> — customer interaction with products, counters, vehicles, and defined objects of interest.</li>
-        <li><b>New vs. returning visitors</b> — vision-assisted repeat-visit recognition for aggregate flow analysis.</li>
-        <li><b>Guard presence monitoring</b> — automated verification of security personnel within designated areas and periods.</li>
-        <li><b>Cleaner presence monitoring</b> — cleaning-staff presence and activity detection for maintenance workflows.</li>
-        <li><b>Kitchen safety monitoring</b> — vision monitoring of predefined kitchen safety and operational conditions.</li>
-        <li><b>Smart buffet monitoring</b> — integrated cleanliness, food availability, crowd, and worker-presence analysis.</li>
-        <li><b>Garbage &amp; waste detection</b> — waste-accumulation detection with event reporting for faster response.</li>
-        <li><b>Parking &amp; vehicle monitoring</b> — detection, tracking, counting, and timestamping of vehicles.</li>
-        <li><b>Vehicle passenger counting</b> — vision-based entry/exit counting with event timestamps and vehicle-level analytics.</li>
+        <li><b>Human &amp; crowd analytics</b> — people counting and occupancy, staff–customer interaction, demographic and group analysis, sentiment patterns, new-vs-returning visitors, and peak-time detection.</li>
+        <li><b>Safety &amp; facility intelligence</b> — guard and cleaner presence verification, kitchen-safety monitoring, buffet-condition monitoring, and waste detection with event reporting.</li>
+        <li><b>Vehicle &amp; mobility intelligence</b> — vehicle detection, tracking, counting, and timestamping; parking analytics; and passenger entry/exit counting.</li>
+        <li><b>Edge vision infrastructure</b> — the research-relevant core: dataset design, optimized inference, NPU model conversion, device-fleet deployment, offline caching and synchronization, and OS/firmware optimization.</li>
       </ol>
     </div>
   </div>
@@ -185,7 +189,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between
         <p>A centralized decision-support dashboard for a national energy authority, consolidating production, supply, inflow/outflow, reserves, organizational performance, and historical trends — with AI-generated insights and management-level summaries for faster interpretation of complex sector data.</p>
       </div>
       <div class="card">
-        <p class="role">Technical contributor</p>
+        <p class="role">AI systems contributor</p>
         <h3>Energy-Sector Generative AI Assistant</h3>
         <p>A domain-specific assistant connecting organizational documents, Bangla administrative records, databases, and structured sector information through grounded retrieval and generation — including Bangla dataset preparation, document/database integration, grounded question answering, and automatic generation of reports in predefined organizational formats.</p>
       </div>
@@ -213,13 +217,13 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between
         <p>A natural-language interface for querying large structured databases via a controlled NL-to-SQL pipeline — interpreting questions, retrieving data, and generating readable answers with formatted text, tables, and charts. Schema preparation, model fine-tuning, inference deployment, query-safety logic, UI, and hosting.</p>
       </div>
       <div class="card">
-        <p class="role">Technical contributor</p>
-        <h3>Ophthalmic-Domain Conversational AI</h3>
-        <p>Domain-adapted conversational AI for retrieving and presenting diabetic-retinopathy information — exploring how specialized LLMs and structured retrieval can make complex ophthalmic knowledge accessible while staying grounded in curated domain sources.</p>
+        <p class="role">AI systems contributor</p>
+        <h3>Ophthalmic Health-Information Assistant</h3>
+        <p>Domain-adapted conversational AI for retrieving and presenting diabetic-retinopathy information — exploring how specialized LLMs and structured retrieval can make complex ophthalmic knowledge accessible while staying grounded in curated domain sources. An information-access system, not a diagnostic tool.</p>
       </div>
       <div class="card">
-        <p class="role">Technical contributor</p>
-        <h3>AI Clinical Documentation Platform</h3>
+        <p class="role">AI systems contributor</p>
+        <h3>AI Clinical Documentation Assistant</h3>
         <p>AI-assisted clinical documentation from pre-visit symptom intake to post-visit assistance — real-time doctor–patient transcription, structured note generation, Arabic-dialect/English code-switching, role-based access, EMR/EHR-ready outputs, and a post-visit conversational assistant.</p>
       </div>
       <div class="card">
@@ -259,7 +263,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between
         <p>High-quality Bengali printed-text recognition — layout-aware OCR, vision-language-model-assisted annotation, dataset preparation, and domain-specific OCR fine-tuning.</p>
       </div>
       <div class="card">
-        <p class="role">Technical contributor</p>
+        <p class="role">AI systems contributor</p>
         <h3>OCR &amp; Document Automation at Scale</h3>
         <p>High-throughput pipeline digitizing and understanding large collections of paper-based organizational documents — OCR, document processing, on-premise GPU inference, LLMs, vector retrieval, and multi-agentic RAG turning unstructured archives into searchable organizational knowledge.</p>
       </div>
