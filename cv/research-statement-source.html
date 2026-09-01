@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Md. Repon Islam — Research Statement</title>
+<style>
+@page{size:A4;margin:12.5mm 15mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Georgia","Times New Roman",serif;font-size:9.7pt;line-height:1.37;color:#111}
+.head{text-align:center;border-bottom:1.5pt solid #111;padding-bottom:6pt;margin-bottom:7pt}
+.head h1{font-size:14pt;letter-spacing:.04em;font-weight:700;text-transform:uppercase}
+.head .sub{margin-top:2pt;font-size:9.8pt}
+.head .contact{margin-top:1.5pt;font-size:8.8pt;color:#222}
+h2{font-size:10.2pt;text-transform:uppercase;letter-spacing:.06em;margin:6.5pt 0 2.8pt;font-weight:700;color:#111}
+p{margin-bottom:3.8pt;text-align:justify;color:#1a1a1a}
+b{color:#111}
+ol{margin:1pt 0 3.8pt 14pt}
+ol li{margin-bottom:3pt;text-align:justify;color:#1a1a1a}
+.foot{margin-top:5pt;font-size:8.4pt;color:#555;text-align:center;border-top:.6pt solid #999;padding-top:3pt}
+</style>
+</head>
+<body>
+
+<div class="head">
+  <h1>Research Statement</h1>
+  <p class="sub">Md. Repon Islam — Assistant Professor, Dept. of Computer Science &amp; Engineering, KUET, Bangladesh</p>
+  <p class="contact">repon@cse.kuet.ac.bd · cse-repon.github.io · Prospective PhD applicant, Spring/Fall 2027</p>
+</div>
+
+<h2>Motivation</h2>
+<p>A multimodal system is useful at the edge only when its intelligence survives limited memory and power, intermittent connectivity, private data that cannot leave the device, and hardware far smaller than a data-center accelerator. These constraints are especially consequential for assistive technologies and institutions with limited computing infrastructure. Yet leading vision–language systems assume cloud-scale resources, while edge deployment is often treated as a final compression step. My research asks how multimodal models and systems should be designed when resource constraints are intrinsic to the problem. I pursue <b>efficient multimodal AI for resource-constrained edge systems</b>, combining vision–language modeling, OCR, speech interfaces, and hardware-aware systems research to make multimodal intelligence affordable, reliable, and private.</p>
+
+<h2>Past Research: Efficient Multimodal Assistive Vision</h2>
+<p>My M.Sc. thesis developed a wearable vision assistant for visually impaired users using a hybrid edge–server architecture. The wearable performs OCR, automatic speech recognition, and text-to-speech locally. A language model on a nearby edge node supports interaction, while an 8B open-source multimodal model on a consumer GPU handles more demanding visual reasoning. The OCR pipeline incorporates orientation correction, text ordering, and grouping, and I evaluated the system on assistive visual question answering. This work produced two first-author papers: a study adapting open-source multimodal LLMs for vision assistants (IEEE ICCIT 2024) and a generative-AI wearable reading-glasses system (IEEE RAAICON 2024), which received the <b>Best Paper Award</b>. The central lesson was architectural. Model capability alone did not determine usefulness; placing perception, language, and interaction across device, edge node, and GPU determined responsiveness, cost, and operation without continuous cloud access.</p>
+<p>My earlier work established the assistive and embedded foundations of this agenda. I investigated gesture-controlled wheelchairs (Springer TCCE 2021), co-authored finger-gesture control for an IoT wheelchair (<i>Sensors</i> 2022), studied CNN-based gesture interfaces (<i>SN Computer Science</i> 2020), and contributed to a review of deep-learning methods for fall detection (<i>IEEE Access</i> 2020). These projects connected learning algorithms with sensors, interfaces, and embedded constraints. They clarified a consistent objective: perception systems should be evaluated not only by predictive performance, but also by whether their computational and interaction requirements permit their intended use.</p>
+
+<h2>Current Research</h2>
+<p>I now extend this agenda through research, open-source engineering, and production deployment. With undergraduate students, I supervised a layout-aware Bengali printed-text OCR system that uses vision-language-model-assisted annotation and fine-tunes PP-OCRv6; the student-first-author paper is accepted at IEEE COMPAS 2026. This project treats annotation as part of the learning system and raises questions about exploiting multimodal annotators while detecting their errors and preserving spatial structure in low-resource document understanding.</p>
+<p>For affordable edge hardware, I maintain open-source deployment infrastructure. My RKNPU driver-update repository for the Orange Pi 5B is my most-starred repository, and I have developed multithreaded YOLO inference pipelines using RKNN. This work exposes the distance between executing a model once and operating it predictably under hardware and software constraints.</p>
+<p>As a technical contributor in collaborative industry teams, I helped engineer distributed computer-vision fleets used continuously across three consecutive seasons of one of the world's largest annual mass gatherings. My work included dataset development, NPU model conversion, offline-first caching and synchronization, and firmware optimization. I also contributed to document-intelligence systems that digitize millions of records through OCR and LLM inference on on-premise GPU clusters with multi-agentic retrieval-augmented generation, as well as industrial IoT and energy-sector analytics platforms. These deployments exposed failure modes underrepresented by static benchmarks: connectivity loss, thermal and memory limits, distribution shift, and fleet-maintenance costs. They motivate me to treat efficiency, uncertainty, and recoverability as properties of the complete multimodal system.</p>
+
+<h2>Research Gap and Proposed Directions</h2>
+<p>Current edge-AI practice lacks a unified account of how model adaptation, hardware execution, network conditions, and decision reliability interact. Compression studies often report aggregate accuracy and throughput, obscuring which cross-modal abilities fail first. Device–edge–cloud partitioning is usually fixed although compute, connectivity, and input difficulty change during operation. Low-resource pipelines can inherit confident errors from models used to create annotations. Moreover, uncertainty estimates for an uncompressed model may not remain calibrated after quantization, fine-tuning, or distribution shift. My doctoral research would address these connected problems through four directions.</p>
+<ol>
+  <li><b>Hardware-aware adaptation of multimodal foundation models.</b> I will study how quantization, distillation, and parameter-efficient fine-tuning affect visual grounding, text recognition, and multimodal reasoning rather than treating quality as a single score. The central problem is to determine where precision and capacity can be removed without breaking cross-modal alignment. Evaluation on embedded GPUs and NPUs would jointly measure capability, latency, memory, and energy, grounding model adaptation in actual deployment constraints.</li>
+  <li><b>Adaptive collaboration across device, edge, and server.</b> A useful partition is not a single split point, but a policy responsive to input complexity, model confidence, thermal state, available compute, privacy requirements, and network quality. I will investigate cascaded inference and dynamic routing that decide when local processing is sufficient and when a larger model is necessary. The goal is graceful operation under changing budgets, including offline-first behavior when connectivity disappears, with explicit trade-offs among response quality, delay, energy, and data exposure.</li>
+  <li><b>Data-efficient perception for low-resource languages and environments.</b> VLM-assisted annotation can reduce manual effort, but its errors may be systematic and difficult to detect when labeled data are scarce. Building from my Bengali OCR work, I will study annotation pipelines that preserve document layout, identify uncertain pseudo-labels, and direct human review where it is most valuable. I will investigate methods that separate annotation-model error from recognition-model error and evaluation protocols that reveal failures across layouts and uncontrolled capture conditions. The objective is a transferable methodology for multimodal perception when large curated datasets do not exist.</li>
+  <li><b>Failure-aware multimodal systems at the edge.</b> In assistive and operational settings, a fluent but incorrect response can be more harmful than abstention or a request for another image. I will examine how compression, hardware-specific conversion, and domain shift alter calibration and failure detection. System mechanisms can then connect uncertainty to action: retrying locally, requesting better input, escalating to a larger model, switching to a simpler verified function, or abstaining. The challenge is to make these responses effective without erasing the latency and energy gains that motivated edge deployment.</li>
+</ol>
+
+<h2>Long-Term Vision</h2>
+<p>My long-term goal is to establish methods and open-source systems for multimodal intelligence that remains capable under constrained compute, unreliable networks, and strict privacy requirements. I envision wearable assistive devices that perform useful perception without depending on a distant cloud, and on-premise systems that allow institutions to use their data without surrendering control. Doctoral study would let me connect my systems-grounded experience to deeper work in efficient learning, multimodal modeling, and trustworthy inference. I seek a research group where algorithms and deployed systems inform each other, and where edge constraints are treated as research variables rather than implementation details. I would bring first-author research in assistive multimodal AI, undergraduate supervision, open-source NPU tooling, and sustained production experience with distributed edge systems. These experiences position me to identify consequential deployment problems and pursue them with the methodological depth expected of doctoral research.</p>
+
+<p class="foot">Md. Repon Islam · Research Statement · September 2026 · Publications and open-source work: cse-repon.github.io</p>
+
+</body>
+</html>
