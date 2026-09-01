@@ -13,12 +13,12 @@
   --paper:#F7F8FA;
   --card:#FFFFFF;
   --ink:#16202B;
-  --muted:#5A6673;
   --teal:#175E8F;
   --teal-ink:#12496F;
   --teal-soft:rgba(23,94,143,.07);
   --amber:#8E6508;
   --amber-soft:rgba(142,101,8,.09);
+  --muted:#49555F;
   --line:#DEE4EB;
   --frame:rgba(22,32,43,.28);
   --shadow:0 1px 2px rgba(22,32,43,.05),0 8px 28px rgba(22,32,43,.06);
@@ -28,7 +28,7 @@
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --paper:#0E141C; --card:#161E29; --ink:#E7EDF3; --muted:#94A1AF;
+    --paper:#0E141C; --card:#161E29; --ink:#E7EDF3; --muted:#A5B3C0;
     --teal:#64AEE0; --teal-ink:#8CC5EC; --teal-soft:rgba(100,174,224,.10);
     --amber:#DFB456; --amber-soft:rgba(223,180,86,.12);
     --line:#263140; --frame:rgba(231,237,243,.30);
@@ -36,7 +36,7 @@
   }
 }
 :root[data-theme="dark"]{
-  --paper:#0E141C; --card:#161E29; --ink:#E7EDF3; --muted:#94A1AF;
+  --paper:#0E141C; --card:#161E29; --ink:#E7EDF3; --muted:#A5B3C0;
   --teal:#64AEE0; --teal-ink:#8CC5EC; --teal-soft:rgba(100,174,224,.10);
   --amber:#DFB456; --amber-soft:rgba(223,180,86,.12);
   --line:#263140; --frame:rgba(231,237,243,.30);
@@ -50,7 +50,7 @@ html{scroll-behavior:smooth}
 }
 body{
   background:var(--paper); color:var(--ink);
-  font-family:var(--body); font-size:1.075rem; line-height:1.62;
+  font-family:var(--body); font-size:1.11rem; line-height:1.64;
   -webkit-font-smoothing:antialiased;
 }
 a{color:var(--teal-ink);text-decoration-color:color-mix(in srgb,var(--teal) 45%,transparent);text-underline-offset:3px}
@@ -246,6 +246,19 @@ h3{font-family:var(--display);font-size:1.14rem;font-weight:600;letter-spacing:-
   padding:.18rem .55rem;border-radius:999px;align-self:flex-start;
 }
 .card.national{border-color:color-mix(in srgb,var(--teal) 40%,transparent)}
+.cta-row{display:flex;justify-content:center;margin-top:2rem}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--mono);font-size:.85rem;font-weight:600;letter-spacing:.04em;
+  background:var(--teal);color:#fff;border:1px solid var(--teal);
+  padding:.9rem 1.7rem;border-radius:4px;text-decoration:none;
+  box-shadow:var(--shadow);transition:filter .15s,transform .15s;
+}
+:root[data-theme="dark"] .cta-btn{color:#0B1A26}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cta-btn{color:#0B1A26}}
+.cta-btn:hover{filter:brightness(1.08);transform:translateY(-1px);color:#fff}
+:root[data-theme="dark"] .cta-btn:hover{color:#0B1A26}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cta-btn:hover{color:#0B1A26}}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.3rem}
 .card{
   background:var(--card);border:1px solid var(--line);border-radius:5px;
@@ -255,7 +268,7 @@ h3{font-family:var(--display);font-size:1.14rem;font-weight:600;letter-spacing:-
 }
 .card:hover{border-color:color-mix(in srgb,var(--teal) 45%,transparent)}
 .card .role{font-family:var(--mono);font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink)}
-.card p{font-size:.95rem;color:var(--muted);line-height:1.55;flex:1}
+.card p{font-size:.98rem;color:var(--muted);line-height:1.58;flex:1}
 .card .foot{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
 .card .foot a{color:var(--teal-ink)}
 
@@ -584,9 +597,16 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between
     <div class="sec-head"><h2>Selected projects</h2><span class="sec-tag">From research prototypes to nationally deployed systems</span></div>
     <div class="impact-lede det"><span class="tick"></span>
       <p class="tag">Edge AI · National impact</p>
-      <p>A thread runs through my applied work: moving AI out of the public cloud — onto affordable edge hardware where devices must be self-sufficient, and onto high-performance on-premise GPU clusters where data cannot leave the premises — contributing to solutions for national-scale challenges: smarter energy-sector monitoring, large-scale digitisation of public records, and data-driven decision-support platforms.</p>
+      <p>A thread runs through my applied work: moving AI out of the public cloud — onto affordable edge hardware where devices must be self-sufficient, and onto high-performance on-premise GPU clusters where data cannot leave the premises — contributing to solutions for national-scale challenges: distributed vision systems for some of the world's largest mass gatherings, smarter energy-sector monitoring, large-scale digitisation of public records, and data-driven decision-support platforms.</p>
     </div>
     <div class="cards">
+      <div class="card national reveal">
+        <p class="role">Technical contributor · 2023 – 2025</p>
+        <h3>Distributed Edge AI for Mass-Gathering Operations</h3>
+        <span class="impact-chip">Edge AI · Deployed at scale</span>
+        <p>Distributed computer-vision systems deployed across the operational areas of one of the world's largest annual mass gatherings, over three consecutive seasons — dataset curation, model training, inference optimization, edge-model conversion, fleet deployment, and offline caching with server synchronization for reliable continuous operation.</p>
+        <p class="foot">YOLO · edge NPUs · offline-first sync · fleet ops</p>
+      </div>
       <div class="card national reveal">
         <p class="role">Technical advisor · 2023 – present</p>
         <h3>AI-driven Industrial IoT Platforms</h3>
@@ -626,8 +646,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between
         <p class="foot">Android · Java/Kotlin · Firebase</p>
       </div>
     </div>
-    <div class="link-row" style="margin-top:1.6rem">
-      <a class="primary" href="applied-ai.html">View all applied AI &amp; intelligent-systems work →</a>
+    <div class="cta-row">
+      <a class="cta-btn" href="applied-ai.html">Explore the full catalogue — 30+ applied AI systems →</a>
     </div>
   </div>
 </section>

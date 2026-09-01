@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
 :root{
-  --paper:#F7F8FA; --card:#FFFFFF; --ink:#16202B; --muted:#5A6673;
+  --paper:#F7F8FA; --card:#FFFFFF; --ink:#16202B; --muted:#49555F;
   --teal:#175E8F; --teal-ink:#12496F; --teal-soft:rgba(23,94,143,.07);
   --amber:#8E6508; --amber-soft:rgba(142,101,8,.09);
   --line:#DEE4EB; --frame:rgba(22,32,43,.28);
@@ -21,7 +21,7 @@
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --paper:#0E141C; --card:#161E29; --ink:#E7EDF3; --muted:#94A1AF;
+    --paper:#0E141C; --card:#161E29; --ink:#E7EDF3; --muted:#A5B3C0;
     --teal:#64AEE0; --teal-ink:#8CC5EC; --teal-soft:rgba(100,174,224,.10);
     --amber:#DFB456; --amber-soft:rgba(223,180,86,.12);
     --line:#263140; --frame:rgba(231,237,243,.30);
@@ -29,7 +29,7 @@
   }
 }
 :root[data-theme="dark"]{
-  --paper:#0E141C; --card:#161E29; --ink:#E7EDF3; --muted:#94A1AF;
+  --paper:#0E141C; --card:#161E29; --ink:#E7EDF3; --muted:#A5B3C0;
   --teal:#64AEE0; --teal-ink:#8CC5EC; --teal-soft:rgba(100,174,224,.10);
   --amber:#DFB456; --amber-soft:rgba(223,180,86,.12);
   --line:#263140; --frame:rgba(231,237,243,.30);
@@ -38,7 +38,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
-body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.05rem;line-height:1.62;-webkit-font-smoothing:antialiased}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.09rem;line-height:1.64;-webkit-font-smoothing:antialiased}
 a{color:var(--teal-ink);text-underline-offset:3px}
 a:hover{color:var(--teal)}
 a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:2px}
@@ -66,7 +66,7 @@ h3{font-family:var(--display);font-size:1.12rem;font-weight:600}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.2rem}
 .card{background:var(--card);border:1px solid var(--line);border-radius:5px;padding:1.35rem 1.45rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.55rem}
 .card .role{font-family:var(--mono);font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink)}
-.card p{font-size:.95rem;color:var(--muted);line-height:1.55;flex:1}
+.card p{font-size:.98rem;color:var(--muted);line-height:1.58;flex:1}
 .card .foot{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
 .badge{font-family:var(--mono);font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.14rem .5rem;border-radius:999px;border:1px solid var(--line);color:var(--muted);align-self:flex-start}
 .badge.pub{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 45%,transparent);background:var(--amber-soft)}
