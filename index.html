@@ -10,36 +10,36 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
 :root{
-  --paper:#F4F7F5;
+  --paper:#F7F8FA;
   --card:#FFFFFF;
-  --ink:#101D19;
-  --muted:#51625C;
-  --teal:#0B7A6A;
-  --teal-ink:#08594E;
-  --teal-soft:rgba(11,122,106,.09);
-  --amber:#96660A;
-  --amber-soft:rgba(150,102,10,.10);
-  --line:#D9E2DD;
-  --frame:rgba(16,29,25,.28);
-  --shadow:0 1px 2px rgba(16,29,25,.05),0 8px 28px rgba(16,29,25,.06);
+  --ink:#16202B;
+  --muted:#5A6673;
+  --teal:#175E8F;
+  --teal-ink:#12496F;
+  --teal-soft:rgba(23,94,143,.07);
+  --amber:#8E6508;
+  --amber-soft:rgba(142,101,8,.09);
+  --line:#DEE4EB;
+  --frame:rgba(22,32,43,.28);
+  --shadow:0 1px 2px rgba(22,32,43,.05),0 8px 28px rgba(22,32,43,.06);
   --display:"Bricolage Grotesque",Georgia,serif;
   --body:"Newsreader",Georgia,"Times New Roman",serif;
   --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --paper:#0C1512; --card:#13211C; --ink:#E6EFEA; --muted:#93A79F;
-    --teal:#3CC3AD; --teal-ink:#5FD6C2; --teal-soft:rgba(60,195,173,.10);
-    --amber:#E4B44E; --amber-soft:rgba(228,180,78,.12);
-    --line:#233530; --frame:rgba(230,239,234,.30);
+    --paper:#0E141C; --card:#161E29; --ink:#E7EDF3; --muted:#94A1AF;
+    --teal:#64AEE0; --teal-ink:#8CC5EC; --teal-soft:rgba(100,174,224,.10);
+    --amber:#DFB456; --amber-soft:rgba(223,180,86,.12);
+    --line:#263140; --frame:rgba(231,237,243,.30);
     --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.35);
   }
 }
 :root[data-theme="dark"]{
-  --paper:#0C1512; --card:#13211C; --ink:#E6EFEA; --muted:#93A79F;
-  --teal:#3CC3AD; --teal-ink:#5FD6C2; --teal-soft:rgba(60,195,173,.10);
-  --amber:#E4B44E; --amber-soft:rgba(228,180,78,.12);
-  --line:#233530; --frame:rgba(230,239,234,.30);
+  --paper:#0E141C; --card:#161E29; --ink:#E7EDF3; --muted:#94A1AF;
+  --teal:#64AEE0; --teal-ink:#8CC5EC; --teal-soft:rgba(100,174,224,.10);
+  --amber:#DFB456; --amber-soft:rgba(223,180,86,.12);
+  --line:#263140; --frame:rgba(231,237,243,.30);
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.35);
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -152,8 +152,8 @@ h1{
 }
 .link-row a:hover{border-color:var(--teal);color:var(--teal-ink)}
 .link-row a.primary{background:var(--teal);border-color:var(--teal);color:#fff}
-:root[data-theme="dark"] .link-row a.primary{color:#08211C}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .link-row a.primary{color:#08211C}}
+:root[data-theme="dark"] .link-row a.primary{color:#0B1A26}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .link-row a.primary{color:#0B1A26}}
 .link-row a.primary:hover{filter:brightness(1.06)}
 
 /* ---------- sections ---------- */
@@ -213,6 +213,20 @@ h3{font-family:var(--display);font-size:1.14rem;font-weight:600;letter-spacing:-
 .pub-note{margin-top:1.3rem;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
 
 /* projects */
+.impact-lede{
+  margin-bottom:1.8rem;background:var(--teal-soft);
+  border:1px solid color-mix(in srgb,var(--teal) 28%,transparent);
+  border-radius:5px;padding:1.4rem 1.6rem;max-width:56em;
+}
+.impact-lede .tag{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--teal-ink)}
+.impact-lede p{margin-top:.5rem;font-size:1.02rem;line-height:1.6}
+.impact-chip{
+  font-family:var(--mono);font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--amber);background:var(--amber-soft);
+  border:1px solid color-mix(in srgb,var(--amber) 40%,transparent);
+  padding:.18rem .55rem;border-radius:999px;align-self:flex-start;
+}
+.card.national{border-color:color-mix(in srgb,var(--teal) 40%,transparent)}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.3rem}
 .card{
   background:var(--card);border:1px solid var(--line);border-radius:5px;
@@ -347,6 +361,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between
     <div class="sec-head"><h2>Research</h2><span class="sec-tag">Two arcs, one thesis: accessible AI must run where its users live</span></div>
     <div class="prose reveal">
       <p>My work sits at the intersection of computer vision, embedded systems, and human need. The world's most capable AI models assume cloud budgets and stable connectivity — assumptions that fail exactly where assistive technology is needed most. I design systems that don't make those assumptions: multimodal models adapted and compressed to run on consumer-grade and NPU-based edge hardware, wrapped in devices a visually impaired person in Khulna can actually afford and use.</p>
+      <p>The same edge-first approach scales beyond the lab: the OCR pipelines and NPU deployment techniques from my research now run inside national infrastructure — monitoring Bangladesh's gas-distribution network and digitising millions of government documents.</p>
     </div>
     <div class="arcs" style="margin-top:1.8rem">
       <div class="arc reveal">
@@ -497,18 +512,30 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between
 <section id="projects">
   <div class="wrap">
     <div class="sec-head"><h2>Selected projects</h2><span class="sec-tag">From research prototypes to nationally deployed systems</span></div>
+    <div class="impact-lede det"><span class="tick"></span>
+      <p class="tag">Edge AI · National impact</p>
+      <p>A thread runs through my applied work: taking AI out of the cloud and onto affordable edge hardware to solve problems at national scale in Bangladesh — real-time monitoring of the country's gas-distribution network, digitisation of millions of government documents, and energy-sector intelligence platforms, all built on the NPU deployment techniques from my research.</p>
+    </div>
     <div class="cards">
+      <div class="card national reveal">
+        <p class="role">Technical advisor · 2023 – present</p>
+        <h3>AI-driven Industrial IoT Platforms</h3>
+        <span class="impact-chip">Edge AI · National impact</span>
+        <p>Advisor on nationwide AI systems including a unified gas-meter data management platform (Petrobangla) and a domain-specific generative-AI assistant for Bangladesh's Energy &amp; Mineral Resources Division — edge nodes on industrial meters feeding real-time monitoring, anomaly detection, and LLM-based analytics.</p>
+        <p class="foot">IoT · Modbus RTU · edge computing · LLMs</p>
+      </div>
+      <div class="card national reveal">
+        <p class="role">Researcher · industry · 2023 – present</p>
+        <h3>OCR &amp; Document Automation at Scale</h3>
+        <span class="impact-chip">Edge AI · National impact</span>
+        <p>Deep learning + LLM pipeline digitising millions of paper documents for government and enterprise workflows — high-speed OCR running on NPU-based single-board computers, plus multi-agentic RAG applications over the extracted data.</p>
+        <p class="foot">PaddleOCR · RAG · Django REST · vector databases</p>
+      </div>
       <div class="card reveal">
         <p class="role">Lead researcher · 2024 – present</p>
         <h3>Wearable Vision Assistant</h3>
         <p>AI-assisted wearable reading system for the visually impaired: real-time object identification, text reading, and scene understanding via multimodal generative AI on a hybrid edge–cloud stack. Basis of the IEEE RAAICON Best Paper and my M.Sc. thesis.</p>
         <p class="foot">Python · LMMs · OCR · Raspberry Pi · edge LLMs</p>
-      </div>
-      <div class="card reveal">
-        <p class="role">Researcher · 2022 – 2024</p>
-        <h3>Multi-modal Smart Wheelchair</h3>
-        <p>Low-cost IoT-enabled wheelchair controlled by finger gesture, hand gesture, and voice, with deep-learning obstacle and fall detection. Published in Sensors (MDPI) and Springer TCCE.</p>
-        <p class="foot">CNNs · IoT sensors · embedded control</p>
       </div>
       <div class="card reveal">
         <p class="role">Open source · edge AI</p>
@@ -517,16 +544,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between
         <p class="foot"><a href="https://github.com/cse-repon/orangepi-5b-rknpu-0.9.8-update">github.com/cse-repon</a> · RK3588 · TensorFlow Lite · ONNX</p>
       </div>
       <div class="card reveal">
-        <p class="role">Researcher · industry · 2023 – present</p>
-        <h3>OCR &amp; Document Automation at Scale</h3>
-        <p>Deep learning + LLM pipeline digitising millions of paper documents for government and enterprise workflows — high-speed OCR deployed on NPU-based SBCs, plus multi-agentic RAG applications over the extracted data.</p>
-        <p class="foot">PaddleOCR · RAG · Django REST · vector databases</p>
-      </div>
-      <div class="card reveal">
-        <p class="role">Technical advisor · national scale</p>
-        <h3>AI-driven Industrial IoT Platforms</h3>
-        <p>Advisor on nationwide AI systems including a unified gas-meter data management platform (Petrobangla) and a domain-specific generative-AI assistant for Bangladesh's Energy &amp; Mineral Resources Division — real-time monitoring, anomaly detection, and LLM-based analytics.</p>
-        <p class="foot">IoT · Modbus RTU · edge computing · LLMs</p>
+        <p class="role">Researcher · 2022 – 2024</p>
+        <h3>Multi-modal Smart Wheelchair</h3>
+        <p>Low-cost IoT-enabled wheelchair controlled by finger gesture, hand gesture, and voice, with deep-learning obstacle and fall detection. Published in Sensors (MDPI) and Springer TCCE.</p>
+        <p class="foot">CNNs · IoT sensors · embedded control</p>
       </div>
       <div class="card reveal">
         <p class="role">Developer · campus impact</p>
@@ -653,6 +674,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between
         <h3>References</h3>
         <ul>
           <li><b>Prof. Dr. Muhammad Sheikh Sadi</b><br><span class="r">Professor, Dept. of CSE, KUET (thesis supervisor)</span><br><span class="e">sadi@cse.kuet.ac.bd</span></li>
+          <li><b>Prof. Dr. Mohammed Abdur Rahman</b><br><span class="r">Full Professor &amp; Founding Head, Dept. of Cyber Security and Forensic Computing, University of Prince Mugrin, Madinah, KSA (research collaborator)</span></li>
           <li><b>Prof. Dr. Al-Mahmud</b><br><span class="r">Professor &amp; Head, Dept. of CSE, KUET</span><br><span class="e">mahmud@cse.kuet.ac.bd</span></li>
           <li><b>Prof. Dr. M. M. A. Hashem</b><br><span class="r">Professor, Dept. of CSE, KUET</span><br><span class="e">hashem@cse.kuet.ac.bd</span></li>
         </ul>
