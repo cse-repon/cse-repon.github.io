@@ -172,6 +172,18 @@ h3{font-family:var(--display);font-size:1.14rem;font-weight:600;letter-spacing:-
 .prose{max-width:44em}
 .prose p+p{margin-top:.9rem}
 
+/* news */
+.news-list{list-style:none;max-width:52em}
+.news-list li{
+  display:grid;grid-template-columns:6.5rem 1fr;gap:1.2rem;
+  padding:.75rem 0;border-bottom:1px solid var(--line);
+  font-size:.98rem;line-height:1.55;
+}
+.news-list li:last-child{border-bottom:0}
+.news-list .d{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-ink);padding-top:.25rem;white-space:nowrap}
+.news-list .hl{color:var(--amber);font-weight:600}
+@media (max-width:600px){.news-list li{grid-template-columns:1fr;gap:.15rem}}
+
 /* research arcs */
 .arcs{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:.4rem}
 .arc{background:var(--card);border:1px solid var(--line);border-radius:5px;padding:1.5rem 1.6rem;box-shadow:var(--shadow)}
@@ -315,6 +327,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between
   <div class="nav-in">
     <a class="nav-name" href="#top">Md. Repon Islam</a>
     <div class="nav-links">
+      <a href="#news">News</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#projects">Projects</a>
@@ -385,6 +398,20 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between
     <a href="https://www.researchgate.net/profile/Md-Islam-611">ResearchGate</a>
   </div>
 </header>
+
+<section id="news">
+  <div class="wrap">
+    <div class="sec-head"><h2>News</h2><span class="sec-tag">Recent milestones</span></div>
+    <ul class="news-list">
+      <li><span class="d">Sep 2026</span><span>Paper <b>accepted at IEEE COMPAS 2026</b> — a layout-aware Bengali printed-text OCR framework with vision-language-model-assisted annotation, with my student as first author. Presentation this October.</span></li>
+      <li><span class="d">2026</span><span><b>"iGRC"</b> — an LLM-powered governance, risk, and compliance assistant for enterprise — in press with Springer (Proc. 2nd Int. Conf. on Emerging Trends in Cybersecurity).</span></li>
+      <li><span class="d">Aug 2026</span><span>Published work crossed <b>370+ citations</b> on Google Scholar (h-index 5).</span></li>
+      <li><span class="d">Jan 2026</span><span>Promoted to <b>Assistant Professor</b>, Dept. of Computer Science &amp; Engineering, KUET.</span></li>
+      <li><span class="d">Aug 2025</span><span><b>M.Sc. Engg. in CSE awarded with a perfect CGPA of 4.00/4.00</b> — thesis on adapting large multimodal models for vision assistants.</span></li>
+      <li><span class="d">Dec 2024</span><span><span class="hl">Best Paper Award at IEEE RAAICON 2024</span> for "Generative AI-assisted Standalone Wearable Reading Glasses for the Visually Impaired".</span></li>
+    </ul>
+  </div>
+</section>
 
 <section id="research">
   <div class="wrap">
@@ -486,7 +513,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between
         </div>
         <div class="pub">
           <p class="t"><a href="https://doi.org/10.1007/978-981-92-1074-9_16">iGRC — An LLM Powered Governance, Risk, and Compliance Management Virtual Assistant for Enterprise</a></p>
-          <p class="authors">M. A. Rahman, <b>Md. Repon Islam</b>, et al.</p>
+          <p class="authors">M. A. Rahman, <b>Md. Repon Islam</b>, M. Rahman</p>
           <p class="meta"><span class="venue">2nd Int. Conf. on Emerging Trends in Cybersecurity (2024) — Springer proceedings</span><span class="badge">In press</span></p>
         </div>
       </div>
@@ -714,7 +741,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between
 <footer>
   <div class="wrap">
     <span>© 2026 Md. Repon Islam</span>
-    <span>Compiled from academic CV, ORCID, DBLP &amp; OpenAlex records</span>
+    <span>Last updated September 2026</span>
   </div>
 </footer>
 
