@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Applied AI &amp; Intelligent Systems — Md. Repon Islam</title>
+<meta name="description" content="Applied AI and intelligent-systems work of Md. Repon Islam — edge AI deployments, computer-vision analytics, LLM systems, and assistive research platforms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#F7F8FA; --card:#FFFFFF; --ink:#16202B; --muted:#5A6673;
+  --teal:#175E8F; --teal-ink:#12496F; --teal-soft:rgba(23,94,143,.07);
+  --amber:#8E6508; --amber-soft:rgba(142,101,8,.09);
+  --line:#DEE4EB; --frame:rgba(22,32,43,.28);
+  --shadow:0 1px 2px rgba(22,32,43,.05),0 8px 28px rgba(22,32,43,.06);
+  --display:"Bricolage Grotesque",Georgia,serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E141C; --card:#161E29; --ink:#E7EDF3; --muted:#94A1AF;
+    --teal:#64AEE0; --teal-ink:#8CC5EC; --teal-soft:rgba(100,174,224,.10);
+    --amber:#DFB456; --amber-soft:rgba(223,180,86,.12);
+    --line:#263140; --frame:rgba(231,237,243,.30);
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E141C; --card:#161E29; --ink:#E7EDF3; --muted:#94A1AF;
+  --teal:#64AEE0; --teal-ink:#8CC5EC; --teal-soft:rgba(100,174,224,.10);
+  --amber:#DFB456; --amber-soft:rgba(223,180,86,.12);
+  --line:#263140; --frame:rgba(231,237,243,.30);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.05rem;line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:var(--teal-ink);text-underline-offset:3px}
+a:hover{color:var(--teal)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
+nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:1rem;padding:.7rem clamp(1.1rem,4vw,2.5rem);max-width:1060px;margin:0 auto}
+.nav-name{font-family:var(--mono);font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.nav-links{margin-left:auto;display:flex;gap:1.15rem;flex-wrap:wrap}
+.nav-links a{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.nav-links a:hover{color:var(--teal)}
+.theme-btn{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:.3rem .7rem;cursor:pointer;transition:border-color .15s,color .15s}
+.theme-btn:hover{border-color:var(--teal);color:var(--teal-ink)}
+header{padding:clamp(2.5rem,7vh,4.5rem) 0 clamp(1.8rem,4vh,2.6rem)}
+.eyebrow{font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--teal)}
+h1{font-family:var(--display);font-weight:640;font-size:clamp(2rem,5vw,3.2rem);line-height:1.05;letter-spacing:-.015em;text-wrap:balance}
+.lede{margin-top:1.2rem;max-width:52em;font-size:1.08rem}
+.lede p+p{margin-top:.8rem}
+.note{margin-top:1.4rem;max-width:52em;font-family:var(--mono);font-size:.72rem;color:var(--muted);line-height:1.7;border-left:2px solid var(--line);padding-left:.9rem}
+section{padding:clamp(2.2rem,5vh,3.4rem) 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.6rem;flex-wrap:wrap}
+h2{font-family:var(--display);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:620;letter-spacing:-.01em}
+.sec-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink)}
+h3{font-family:var(--display);font-size:1.12rem;font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.2rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:5px;padding:1.35rem 1.45rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.55rem}
+.card .role{font-family:var(--mono);font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink)}
+.card p{font-size:.95rem;color:var(--muted);line-height:1.55;flex:1}
+.card .foot{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.badge{font-family:var(--mono);font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.14rem .5rem;border-radius:999px;border:1px solid var(--line);color:var(--muted);align-self:flex-start}
+.badge.pub{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 45%,transparent);background:var(--amber-soft)}
+.modules{margin-top:1.6rem;background:var(--teal-soft);border:1px solid color-mix(in srgb,var(--teal) 25%,transparent);border-radius:5px;padding:1.4rem 1.6rem}
+.modules .tag{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--teal-ink)}
+.modules ol{margin:.9rem 0 0 1.2rem;columns:2;column-gap:2.5rem;font-size:.93rem;color:var(--muted)}
+.modules li{margin-bottom:.5rem;break-inside:avoid}
+.modules li b{color:var(--ink);font-weight:600}
+@media (max-width:720px){.modules ol{columns:1}}
+.scope{margin-top:.4rem;background:var(--card);border:1px solid var(--line);border-radius:5px;padding:1.3rem 1.5rem}
+.scope .tag{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--teal-ink)}
+.scope p{margin-top:.6rem;font-family:var(--mono);font-size:.78rem;line-height:1.9;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:1.6rem 0 2.4rem;margin-top:1rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between;font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav aria-label="Site">
+  <div class="nav-in">
+    <a class="nav-name" href="index.html">Md. Repon Islam</a>
+    <div class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#research">Research</a>
+      <a href="index.html#publications">Publications</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <button class="theme-btn" id="themeToggle" aria-label="Switch color theme">◐ theme</button>
+  </div>
+</nav>
+<script>
+(function(){
+  var root=document.documentElement,saved=null;
+  try{saved=localStorage.getItem('theme')}catch(e){}
+  if(saved==='light'||saved==='dark')root.setAttribute('data-theme',saved);
+  function cur(){var t=root.getAttribute('data-theme');if(t)return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.getElementById('themeToggle');if(!b)return;
+    b.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}});
+  });
+})();
+</script>
+
+<header class="wrap">
+  <p class="eyebrow">Md. Repon Islam · Applied work</p>
+  <h1>Applied AI &amp; Intelligent Systems</h1>
+  <div class="lede">
+    <p>My applied research and engineering work spans computer vision, Edge AI, multimodal and generative AI, industrial IoT, and intelligent information systems. As a technical contributor I have worked across the full AI system lifecycle — from custom dataset collection and curation, model development and training, and optimization for resource-constrained hardware, through edge deployment, resilient device-to-server communication, backend integration, dashboards, and operational system design.</p>
+    <p>A significant part of this work has involved large-scale, continuously operating AI systems, where computational efficiency, reliability, connectivity constraints, data synchronization, and maintainability matter as much as model accuracy.</p>
+  </div>
+  <p class="note">Role framing: unless noted otherwise, entries below reflect my role as a technical contributor within collaborative industry and research teams. Client identities, deployment specifics, and proprietary details are intentionally omitted.</p>
+</header>
+
+<section id="edge">
+  <div class="wrap">
+    <div class="sec-head"><h2>1 · Large-scale Edge AI &amp; computer vision</h2></div>
+    <div class="cards">
+      <div class="card">
+        <p class="role">Technical contributor · 2023 – 2025</p>
+        <h3>Distributed Edge AI for Mass-Gathering Operations</h3>
+        <p>Distributed computer-vision systems deployed across the operational and accommodation areas of one of the world's largest annual mass gatherings, over three consecutive seasons. Contributions included custom dataset collection and preparation, model development and training, inference optimization, edge-model conversion, device deployment, local caching with server synchronization, and OS/firmware-level optimization for reliable continuous operation — engineering vision models beyond experimental accuracy into real-world conditions: variable lighting, dense scenes, limited compute, and intermittent connectivity.</p>
+        <p class="foot">YOLO · edge NPUs · offline caching · fleet deployment</p>
+      </div>
+      <div class="card">
+        <p class="role">Technical contributor</p>
+        <h3>On-Premise Edge AI Intelligence Platform</h3>
+        <p>An edge-first computer-vision and intelligent-monitoring platform for real-time, on-premise AI processing — integrating camera analytics with operational intelligence for people and activity monitoring, facility safety, business analytics, and intelligent surveillance, without requiring continuous cloud processing.</p>
+        <p class="foot">computer vision · IoT integration · multi-agentic AI · on-premise</p>
+      </div>
+    </div>
+    <div class="modules">
+      <p class="tag">Computer-vision analytics modules · 2025 · technical contributor</p>
+      <ol>
+        <li><b>People counting &amp; occupancy</b> — real-time detection, tracking, and counting with temporal occupancy and peak-load analytics.</li>
+        <li><b>Face &amp; uniform recognition</b> — vision-based staff identification with uniform/compliance recognition.</li>
+        <li><b>Staff interaction analytics</b> — presence detection and analysis of staff–customer–service-area interactions.</li>
+        <li><b>Sentiment analysis</b> — visual inference of engagement and observable sentiment patterns for service-quality analytics.</li>
+        <li><b>Demographic &amp; group analytics</b> — aggregate classification and individual/family/group visitation patterns.</li>
+        <li><b>Peak-time detection</b> — temporal visitor analysis for staffing and operational planning.</li>
+        <li><b>Object-interaction analytics</b> — customer interaction with products, counters, vehicles, and defined objects of interest.</li>
+        <li><b>New vs. returning visitors</b> — vision-assisted repeat-visit recognition for aggregate flow analysis.</li>
+        <li><b>Guard presence monitoring</b> — automated verification of security personnel within designated areas and periods.</li>
+        <li><b>Cleaner presence monitoring</b> — cleaning-staff presence and activity detection for maintenance workflows.</li>
+        <li><b>Kitchen safety monitoring</b> — vision monitoring of predefined kitchen safety and operational conditions.</li>
+        <li><b>Smart buffet monitoring</b> — integrated cleanliness, food availability, crowd, and worker-presence analysis.</li>
+        <li><b>Garbage &amp; waste detection</b> — waste-accumulation detection with event reporting for faster response.</li>
+        <li><b>Parking &amp; vehicle monitoring</b> — detection, tracking, counting, and timestamping of vehicles.</li>
+        <li><b>Vehicle passenger counting</b> — vision-based entry/exit counting with event timestamps and vehicle-level analytics.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="national">
+  <div class="wrap">
+    <div class="sec-head"><h2>2 · National-scale &amp; public-sector digital systems</h2></div>
+    <div class="cards">
+      <div class="card">
+        <p class="role">Technical contributor</p>
+        <h3>Intelligent Workforce Management Platform</h3>
+        <p>AI-assisted attendance and workforce monitoring integrating biometric face verification, GPS/geofencing, automated check-in/out, violation tracking, leave and outdoor-pass workflows, reporting, role-based access, and mobile/web interfaces — combining computer vision with location intelligence and workflow automation.</p>
+      </div>
+      <div class="card">
+        <p class="role">Technical contributor</p>
+        <h3>Smart Fuel Allocation Platform</h3>
+        <p>A QR-based fuel allocation and customer-fulfillment system developed as a rapid-response digital solution for managing distribution and long queues during critical supply conditions — controlled allocation, customer verification, digital authorization, station operations, centralized monitoring, and auditable transactions.</p>
+      </div>
+      <div class="card">
+        <p class="role">Technical contributor</p>
+        <h3>Fuel Distribution Automation</h3>
+        <p>End-to-end digitization of the fuel-distribution lifecycle — from allocation and organizational distribution to depot operations, approval, lifting, stock monitoring, and dispensing — with a phased architecture incorporating edge-AI vehicle identification and dispensing monitoring, connecting physical depot operations with centralized oversight.</p>
+      </div>
+      <div class="card">
+        <p class="role">Technical contributor</p>
+        <h3>Energy-Sector Executive Dashboard</h3>
+        <p>A centralized decision-support dashboard for a national energy authority, consolidating production, supply, inflow/outflow, reserves, organizational performance, and historical trends — with AI-generated insights and management-level summaries for faster interpretation of complex sector data.</p>
+      </div>
+      <div class="card">
+        <p class="role">Technical contributor</p>
+        <h3>Energy-Sector Generative AI Assistant</h3>
+        <p>A domain-specific assistant connecting organizational documents, Bangla administrative records, databases, and structured sector information through grounded retrieval and generation — including Bangla dataset preparation, document/database integration, grounded question answering, and automatic generation of reports in predefined organizational formats.</p>
+      </div>
+      <div class="card">
+        <p class="role">Technical contributor</p>
+        <h3>Industrial IoT &amp; Meter-Data Intelligence</h3>
+        <p>Industrial monitoring platforms combining edge computing, field instrumentation, meter communication, centralized data acquisition, anomaly monitoring, dashboards, and AI-assisted analytics — bridging embedded systems with modern AI in national energy-sector applications.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="llm">
+  <div class="wrap">
+    <div class="sec-head"><h2>3 · Large language models &amp; generative AI systems</h2></div>
+    <div class="cards">
+      <div class="card">
+        <p class="role">Technical contributor · 2024</p>
+        <h3>Pilgrimage-Services Conversational AI</h3>
+        <p>Domain-specific conversational AI answering pilgrimage-related questions in Arabic and English — domain-knowledge collection and preparation covering procedures, rituals, services, and operations; model adaptation and training; deployment, backend integration, UI, and hosting.</p>
+      </div>
+      <div class="card">
+        <p class="role">Technical contributor · 2024</p>
+        <h3>Natural-Language Database Intelligence</h3>
+        <p>A natural-language interface for querying large structured databases via a controlled NL-to-SQL pipeline — interpreting questions, retrieving data, and generating readable answers with formatted text, tables, and charts. Schema preparation, model fine-tuning, inference deployment, query-safety logic, UI, and hosting.</p>
+      </div>
+      <div class="card">
+        <p class="role">Technical contributor</p>
+        <h3>Ophthalmic-Domain Conversational AI</h3>
+        <p>Domain-adapted conversational AI for retrieving and presenting diabetic-retinopathy information — exploring how specialized LLMs and structured retrieval can make complex ophthalmic knowledge accessible while staying grounded in curated domain sources.</p>
+      </div>
+      <div class="card">
+        <p class="role">Technical contributor</p>
+        <h3>AI Clinical Documentation Platform</h3>
+        <p>AI-assisted clinical documentation from pre-visit symptom intake to post-visit assistance — real-time doctor–patient transcription, structured note generation, Arabic-dialect/English code-switching, role-based access, EMR/EHR-ready outputs, and a post-visit conversational assistant.</p>
+      </div>
+      <div class="card">
+        <p class="role">Technical contributor</p>
+        <h3>Multilingual Venue Smart Assistant</h3>
+        <p>A multilingual intelligent assistant for a large religious-services ecosystem, integrating conversational AI with synchronized operational information — prayer-time queries, schedules, location information, media resources, saved history, and context-aware mobile responses.</p>
+      </div>
+      <div class="card">
+        <p class="role">Technical contributor · published</p>
+        <h3>iGRC — LLM-Powered Governance, Risk &amp; Compliance Assistant</h3>
+        <span class="badge pub">In press · Springer</span>
+        <p>An LLM-based enterprise assistant for governance, risk, and compliance management, applying generative AI and retrieval-oriented methods to organizational cybersecurity and compliance knowledge. Represented in my publication record as an in-press research contribution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="assistive">
+  <div class="wrap">
+    <div class="sec-head"><h2>4 · Assistive, multimodal &amp; research systems</h2><span class="sec-tag">My principal research line</span></div>
+    <div class="cards">
+      <div class="card">
+        <p class="role">Lead researcher</p>
+        <h3>Wearable Multimodal Vision Assistant</h3>
+        <span class="badge pub">M.Sc. thesis · IEEE RAAICON 2024 Best Paper</span>
+        <p>My principal research system for assisting visually impaired users — real-time text reading, scene understanding, visual question answering, and speech interaction through an efficient hybrid architecture combining lightweight wearable hardware, edge AI, OCR, speech technologies, local language models, and larger multimodal models.</p>
+      </div>
+      <div class="card">
+        <p class="role">Lead researcher</p>
+        <h3>Generative AI-Assisted Standalone Reading Glasses</h3>
+        <p>Low-cost wearable reading system integrating computer vision, OCR, speech interfaces, and generative AI — accessible reading assistance without dependence on high-end computing hardware.</p>
+      </div>
+      <div class="card">
+        <p class="role">Researcher · supervisor</p>
+        <h3>Bengali OCR &amp; Document Understanding</h3>
+        <span class="badge pub">Accepted · IEEE COMPAS 2026</span>
+        <p>High-quality Bengali printed-text recognition — layout-aware OCR, vision-language-model-assisted annotation, dataset preparation, and domain-specific OCR fine-tuning.</p>
+      </div>
+      <div class="card">
+        <p class="role">Technical contributor</p>
+        <h3>OCR &amp; Document Automation at Scale</h3>
+        <p>High-throughput pipeline digitizing and understanding large collections of paper-based organizational documents — OCR, document processing, on-premise GPU inference, LLMs, vector retrieval, and multi-agentic RAG turning unstructured archives into searchable organizational knowledge.</p>
+      </div>
+      <div class="card">
+        <p class="role">Open source</p>
+        <h3>Rockchip NPU &amp; Resource-Constrained Deployment</h3>
+        <p>Open-source work on deploying deep-learning models on affordable Rockchip edge hardware — RKNN/NPU inference, model conversion, multi-threaded pipelines, and board-level optimization, including an RKNPU driver update and YOLO inference pipelines.</p>
+        <p class="foot"><a href="https://github.com/cse-repon">github.com/cse-repon</a></p>
+      </div>
+      <div class="card">
+        <p class="role">Researcher</p>
+        <h3>Multimodal Smart Wheelchair</h3>
+        <span class="badge pub">Sensors (MDPI) · Springer</span>
+        <p>IoT-enabled assistive wheelchair research combining finger-gesture, hand-gesture, and voice interaction with embedded sensing and deep-learning-based safety mechanisms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="earlier">
+  <div class="wrap">
+    <div class="sec-head"><h2>5 · Earlier intelligent &amp; software systems</h2></div>
+    <div class="cards">
+      <div class="card">
+        <p class="role">Researcher</p>
+        <h3>Fire Safety Detection &amp; IoT Response</h3>
+        <span class="badge pub">IEEE ICICT 2024</span>
+        <p>Computer-vision and IoT-based fire-safety framework combining automated visual detection with connected response mechanisms.</p>
+      </div>
+      <div class="card">
+        <p class="role">Supervisor</p>
+        <h3>CycleX — Smart Bicycle Sharing</h3>
+        <span class="badge pub">IEEE EICT 2025</span>
+        <p>IoT-integrated bicycle-sharing platform for campus environments, combining connected devices with digital monitoring and management.</p>
+      </div>
+      <div class="card">
+        <p class="role">Developer</p>
+        <h3>KUETian — Campus Ecosystem</h3>
+        <p>Widely used Android and web ecosystem for KUET students — academic profiles, automated class routines, library functionality, and other university services.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="scope">
+  <div class="wrap">
+    <div class="scope">
+      <p class="tag">Technical scope</p>
+      <p>End-to-end AI system development: dataset design &amp; curation · computer-vision model training · multimodal/LLM adaptation · model conversion &amp; optimization · Edge AI/NPU deployment · embedded Linux &amp; firmware optimization · resilient offline caching &amp; synchronization · IoT integration · backend/API development · database intelligence · RAG · dashboards · on-premise GPU inference · production deployment</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Md. Repon Islam · <a href="index.html">Back to main page</a></span>
+    <span>Last updated September 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
